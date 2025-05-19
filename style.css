@@ -20,20 +20,20 @@ header {
   }
 
 .content {
-    background-color: #151414;
+    	background-color: #151414;
 	font-size: 14px;
-    padding: 1px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    	padding: 1px;
+    	display: flex;
+    	justify-content: space-around;
+    	align-items: center;
 	margin-left: 0px;
-    margin-right: 0px;
+    	margin-right: 0px;
+	transition: transform 0.4s ease-out;
   }
 
 .content:hover {
 	transform: scale(1.05);
 	transition: 0.3s ease-in;
-	transition: 0.5s ease-out; 
 }
 
 header h1 {
