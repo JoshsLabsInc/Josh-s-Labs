@@ -2,68 +2,119 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Josh's Cover Letter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josh's Labs · About</title>
     <link rel="stylesheet" href="../style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .about-section {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 40px;
-            background-color: #2a2a2a;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-            color: #fff;
-        }
+        /* ===== ABOUT PAGE ===== */
+.about-container h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+    text-align: center;
+}
 
-        .about-section h1 {
-            font-size: 36px;
-            margin-bottom: 30px;
-            color: #4caf50;
-            border-bottom: 2px solid #4caf50;
-            padding-bottom: 10px;
-        }
+.about-container h1 span {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-        .about-section p {
-            font-size: 18px;
-            line-height: 1.8;
-            text-align: justify;
-        }
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 720px;
+    margin: 0 auto;
+}
 
-        footer {
-            margin-top: 60px;
-            text-align: center;
-        }
+.about-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    text-align: justify;
+}
+
+.about-text p:first-of-type {
+    margin-top: 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .about-container h1 {
+        font-size: 30px;
+    }
+    .about-text p {
+        font-size: 15px;
+    }
+}
     </style>
 </head>
-
 <body>
-    <div class="header">
-        <header>
-            <h1>Josh's Cover Letter</h1>
-            <button><a href="https://www.google.com/">Return</a></button>
-        </header>
-        <header class="content">
-            <h3><a href="../index.html">Home</a></h3>
-            <p><a href="../Josh Sooknanan Resume.pdf">Resume</a></p>
-            <h3><a href="My Assignments.html">My Certifications</a></h3>
-            <h3><a href="More About the Creator.html">About The Creator</a></h3>
-            <h3><a href="Contact.html">Contact Me</a></h3>
-        </header>
-    </div>
 
-    <section class="about-section">
-        <h1>About Me</h1>
-        <p>
-My journey in coding and technology began at age 14, driven by a deep curiosity and love for problem-solving. I hold a Web Design Certificate from CTS College of Business and Computer Science and continue to expand my knowledge through ongoing courses, including Project Management and Generative AI with LLMs.
-            <br> <br>
-Previously, I worked as an Assistant Electronic Engineer at an electronic store, where I developed strong skills in hardware troubleshooting, customer support, and technical problem-solving. These abilities naturally transitioned into my passion for web design and development. I’m particularly proficient in HTML, CSS, and Photoshop and enjoy staying up-to-date with the latest web design trends and tools.
-             <br> <br>
-I’m currently working toward my long-term goal of becoming a software engineer, with a strong interest in full-stack development. I thrive on continuous learning, collaboration, and creating high-quality digital experiences through thoughtful design and clean, efficient code.
-        </p>
-    </section>
+    <!-- ===== GLOW ORB ===== -->
+    <div class="orb" id="orb"></div>
 
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-bolt"></i>
+            <span>Josh's Labs</span>
+        </div>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../Josh Sooknanan Resume.pdf" target="_blank">Resume</a>
+            <a href="My Assignments.html">Certifications</a>
+            <a href="More About the Creator.html" class="active">About</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <a href="../index.html" class="btn-outline">
+                <i class="fas fa-arrow-left"></i> Return
+            </a>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+        <div class="container about-container">
+            <span class="badge"><i class="fas fa-user-astronaut"></i> About the Creator</span>
+            <h1>Josh <span>Cory Sooknanan</span></h1>
+            <div class="about-text">
+                <p>
+                    My journey in coding and technology began at age 14, driven by a deep curiosity and love for problem-solving. I hold a Web Design Certificate from CTS College of Business and Computer Science and continue to expand my knowledge through ongoing courses, including Project Management and Generative AI with LLMs.
+                </p>
+                <p>
+                    Previously, I worked as an Assistant Electronic Engineer at an electronic store, where I developed strong skills in hardware troubleshooting, customer support, and technical problem-solving. These abilities naturally transitioned into my passion for web design and development. I’m particularly proficient in HTML, CSS, and Photoshop and enjoy staying up-to-date with the latest web design trends and tools.
+                </p>
+                <p>
+                    I’m currently working toward my long-term goal of becoming a software engineer, with a strong interest in full-stack development. I thrive on continuous learning, collaboration, and creating high-quality digital experiences through thoughtful design and clean, efficient code.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
     <footer>
-        <p>Made from scratch by Josh the code master!</p>
+        <p>Made from scratch by <span>Josh's Labs</span></p>
+        <div class="social-links">
+            <a href="https://github.com/JoshsLabsInc" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
     </footer>
+
+    <!-- ===== JAVASCRIPT for glow orb ===== -->
+    <script>
+        const orb = document.getElementById('orb');
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            orb.style.left = x + 'px';
+            orb.style.top = y + 'px';
+        });
+    </script>
 </body>
 </html>
