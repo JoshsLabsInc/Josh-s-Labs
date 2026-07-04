@@ -2,87 +2,200 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Josh's Cover Letter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josh's Labs · Certifications</title>
     <link rel="stylesheet" href="../style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .cert-section {
-            max-width: 100%;
-            padding: 40px 0 40px 4px; /* top, right, bottom, left */
-            text-align: left;
-        }
+        /* ===== CERTIFICATIONS PAGE ===== */
+.cert-container h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    text-align: center;
+}
 
-        .cert-section h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
+.cert-container h1 span {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-        .cert-section p {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
+.cert-container .sub-text {
+    font-size: 17px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    text-align: center;
+}
 
-        .cert-section ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
+.cert-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
-        .cert-section li {
-            margin: 20px 0;
-        }
+.cert-list li {
+    margin: 0;
+    padding: 0;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.3s ease;
+}
 
-        .cert-section a {
-            color: white;
-            font-size: 22px;
-            transition: color 0.3s ease, transform 0.2s ease;
-        }
+.cert-list li:hover {
+    background: rgba(167, 139, 250, 0.08);
+    border-color: rgba(167, 139, 250, 0.2);
+    transform: translateX(6px);
+}
 
-        .cert-section a:hover {
-            color: #4caf50;
-            transform: translateX(5px);
-        }
+.cert-list a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.25s;
+    width: 100%;
+}
 
-        footer {
-            margin-top: 60px;
-            text-align: center;
-        }
+.cert-list a i:first-child {
+    font-size: 22px;
+    color: #ef4444;
+    flex-shrink: 0;
+}
+
+.cert-list a .cert-arrow {
+    margin-left: auto;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: var(--accent);
+}
+
+.cert-list li:hover a .cert-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cert-list a:hover {
+    color: #fff;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .cert-container h1 {
+        font-size: 30px;
+    }
+    .cert-list a {
+        font-size: 15px;
+        padding: 14px 16px;
+    }
+    .cert-list a i:first-child {
+        font-size: 18px;
+    }
+}
     </style>
 </head>
-
 <body>
-    <div class="header">
-        <header>
-            <h1>Josh's Cover Letter</h1>
-	    <button><a href="https://www.google.com/">Return</a></button>
-        </header>
-        <header class="content">
-            <h3><a href="../index.html">Home</a></h3>
-            <p><a href="../Josh Sooknanan Resume.pdf">Resume</a></p>
-            <h3><a href="My Assignments.html">My Certifications</a></h3>
-            <h3><a href="More About the Creator.html">About The Creator</a></h3>
-            <h3><a href="Contact.html">Contact Me</a></h3>
-        </header>
-    </div>
 
-    <div class="cert-section" style="margin-left: 6px;">
-        <h1>My Certifications</h1>
-        <p>These are my academic certificates:</p>
-		<br>
-        <ul style="margin-left: 10px;">
-            <li><a href="../Certifications/Josh Sooknanan Web Design.pdf">Web Design</a></li>
-			<br>
-            <li><a href="../Certifications/CEP 2023 Certificate of Completion - Josh Sooknanan.pdf">Project Management</a></li>
-			<br>
-            <li><a href="../Certifications/Certificate of Completion DIA.pdf">Youth Innovation Lab</a></li>
-			<br>
-            <li><a href="../Certifications/CSEC (offical).pdf">CSEC Passes</a></li>
-			<br>
-            <li><a href="../Certifications/Josh Sooknanan Garment Production Level 1.pdf">Garment Production</a></li>
-        </ul>
-    </div>
+    <!-- ===== GLOW ORB (matched to index) ===== -->
+    <div class="orb" id="orb"></div>
 
+    <!-- ===== HEADER with unified navigation ===== -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-bolt"></i>
+            <span>Josh's Labs</span>
+        </div>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../Josh Sooknanan Resume.pdf" target="_blank">Resume</a>
+            <a href="My Assignments.html" class="active">Certifications</a>
+            <a href="More About the Creator.html">About</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <a href="../index.html" class="btn-outline">
+                <i class="fas fa-arrow-left"></i> Return
+            </a>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+        <div class="container cert-container">
+            <!-- Badge & heading -->
+            <span class="badge"><i class="fas fa-certificate"></i> My Credentials</span>
+            <h1>Certifications &<br> <span>Academic Achievements</span></h1>
+            <p class="sub-text">
+                These are my official academic certificates and professional development credentials.
+            </p>
+
+            <!-- Certification list -->
+            <ul class="cert-list">
+                <li>
+                    <a href="../Certifications/Josh Sooknanan Web Design.pdf" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Web Design
+                        <span class="cert-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../Certifications/CEP 2023 Certificate of Completion - Josh Sooknanan.pdf" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Project Management
+                        <span class="cert-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../Certifications/Certificate of Completion DIA.pdf" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Youth Innovation Lab
+                        <span class="cert-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../Certifications/CSEC (offical).pdf" target="_blank">
+                        <i class="fas fa-file-pdf"></i> CSEC Passes
+                        <span class="cert-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../Certifications/Josh Sooknanan Garment Production Level 1.pdf" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Garment Production
+                        <span class="cert-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
     <footer>
-        <p>Made from scratch by Josh the code master!</p>
+        <p>Made from scratch by <span>Josh's Labs</span></p>
+        <div class="social-links">
+            <a href="https://github.com/JoshsLabsInc" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
     </footer>
+
+    <!-- ===== JAVASCRIPT for glow orb ===== -->
+    <script>
+        const orb = document.getElementById('orb');
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            orb.style.left = x + 'px';
+            orb.style.top = y + 'px';
+        });
+    </script>
 </body>
 </html>
-
